@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>SweetAlert</title>
+
+  <link rel="stylesheet" href="./example.css">
+
+  <!-- This is what you need -->
+  <script src="../lib/sweet-alert.js"></script>
+  <link rel="stylesheet" href="../lib/sweet-alert.css">
+  <!--.......................-->
+
+</head>
+
+<body>
+
+<h1>珍道具</h1>
+<h2>CHINDOGU</h2>
+<h3>Scitech Chindogu generator</h3>
+<button class="download">Download</button>
+
+<!-- What does it do? -->
+
+<p>Chindōgu (珍道具) is the Japanese art of inventing ingenious everyday gadgets.</p>
+<p>1. it has to be possible to make (i.e., it has to actually exist), in spite of its absurdity;</p>
+<p>2. it has to remain in the public domain (i.e., it cannot be given a patent);</p>
+<p>it must not be exclusively a vehicle for humor, or the warped satirical worldview of the inventor.</p>
+
+
+
+<p>Pretty cool huh? SweetAlert automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable, as you can see below!</p>
+
+
+
+
+
+
+<script type="text/javascript">
+var nextWord = (function() {
+  var things = ['Rock', 'Paper', 'Scissors','Spock', 'Lizard'];
+  var count = -1;
+  return function() {
+    return things[Math.floor(Math.random()*things.length)];
+  }
+}());
+
+var nextWord1 =  (function() {
+  var things1 = ['Rock1', 'Paper1', 'Scissors1','Spock1', 'Lizard1'];
+  var count1 = -1;
+  return function() {
+    return things1[Math.floor(Math.random()*things1.length)];
+
+  }
+}
+
+());
+
+
+var copynext1 = nextWord
+
+var things = ['Rock', 'Paper', 'Scissor'];
+var thing = things[Math.floor(Math.random()*things.length)];
+
+function quotes(){
+
+var aquote = new Array;
+aquote[0]="\"Quote 1.\"";
+aquote[1]="\"Quote 2.\"";
+aquote[2]="\"Quote 3.\""
+
+rdmQuote = Math.floor(Math.random()*aquote.length);
+document.getElementById("txtbox") .value=aquote[rdmQuote];
+}
+window.onload=quotes;
+
+
+
+</script>
+
+
+
+<div class="showcase normal">
+	<h2 id="foo">&nbsp;</h2>
+	<pre id="fooa">&nbsp;</pre>
+	
+
+	
+
+	<div class="vs-icon"></div>
+</div>
+
+<div class="showcase sweet">
+	<h2 id="foo1">&nbsp;</h2>
+	<pre>sweetAlert(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
+	
+
+</div>
+<div class="center-container">
+	<p class="center"><button onclick="
+  document.getElementById('foo').innerHTML = nextWord(); document.getElementById('fooa').innerHTML = nextWord(); document.getElementById('foo1').innerHTML = nextWord1();
+">Update</button></p>
+	
+</div>
+
+<footer>
+	Scitech • 2014
+</footer>
+
+<script>
+
+document.querySelector('button.download').onclick = function(){
+	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
+};
+
+document.querySelector('.showcase.normal button').onclick = function(){
+	alert("Oops... Something went wrong!");
+};
+
+document.querySelector('.showcase.sweet button').onclick = function(){
+	swal("Oops...", "Something went wrong!", "error");
+};
+
+document.querySelector('ul.examples li.message button').onclick = function(){
+	swal("Here's a message!");
+};
+
+document.querySelector('ul.examples li.timer button').onclick = function(){
+	swal({
+		title: "Auto close alert!",
+		text: "I will close in 2 seconds.",
+		timer: 2000
+	});
+};
+
+document.querySelector('ul.examples li.title-text button').onclick = function(){
+	swal("Here's a message!", "It's pretty, isn't it?")
+};
+
+document.querySelector('ul.examples li.success button').onclick = function(){
+	swal("Good job!", "You clicked the button!", "success");
+};
+
+document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!',
+		closeOnConfirm: false,
+		//closeOnCancel: false
+	},
+	function(){
+		swal("Deleted!", "Your imaginary file has been deleted!", "success");
+	});
+};
+
+document.querySelector('ul.examples li.warning.cancel button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!',
+		cancelButtonText: "No, cancel plx!",
+		closeOnConfirm: false,
+		closeOnCancel: false
+	},
+	function(isConfirm){
+    if (isConfirm){
+      swal("Deleted!", "Your imaginary file has been deleted!", "success");
+    } else {
+      swal("Cancelled", "Your imaginary file is safe :)", "error");
+    }
+	});
+};
+
+
+
+document.querySelector('ul.examples li.custom-icon button').onclick = function(){
+	swal({
+		title: "Computer chose:",
+		text: thing,
+		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+</script>
+
+
+
+</body>
+
+</html>

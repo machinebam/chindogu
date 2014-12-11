@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>SweetAlert</title>
+
+ 
+
+  <!-- This is what you need -->
+  <script src="../lib/sweet-alert.js"></script>
+  <link rel="stylesheet" href="../lib/sweet-alert.css">
+  <!--.......................-->
+
+</head>
+
+<body>
+
+<h1>Sweet Alert</h1>
+<h2>A beautiful replacement for Javascript's "Alert"</h2>
+<button class="download">Download</button>
+
+<!-- What does it do? -->
+<h3>So... What does it do?</h3>
+<p>Here’s a comparison of a standard error message. The first one uses the built-in <strong>alert</strong>-function, while the second is using <strong>sweetAlert</strong>.</p>
+
+<div class="showcase normal">
+	<h4>Normal alert</h4>
+	<button>Show error message</button>
+
+	<h5>Code:</h5>
+	<pre><span class="func">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
+
+	</pre>
+
+	<div class="vs-icon"></div>
+</div>
+
+<div class="showcase sweet">
+	<h4>Sweet Alert</h4>
+	<button>Show error message</button>
+
+	<h5>Code:</h5>
+	<pre>sweetAlert(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
+</div>
+
+<p>Pretty cool huh? SweetAlert automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable, as you can see below!</p>
+
+
+<!-- Examples -->
+<h3>More examples</h3>
+
+<p class="center">In these examples, we're using the shorthand function <strong>swal</strong> to call sweetAlert.</p>
+
+<div class="ui">
+			<p>Event Submitted!</p>
+			<button id="success">Try me!</button>
+		</div>
+		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
+
+<ul class="examples">
+
+
+	
+		
+	
+
+	
+
+	
+
+	<li class="custom-icon">
+		<div class="ui">
+			<p>A message with a custom icon</p>
+			<button id="terms-conditions">Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Here's a custom image."</span>,
+&nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
+});</pre>
+	</li>
+
+</ul>
+
+
+<!-- Contribute -->
+<h3>Contribute</h3>
+<p>SweetAlert was created by <a href="http://tristanedwards.me" target="_blank">Tristan Edwards</a>, you can follow him on <a href="https://twitter.com/t4t5" target="_blank" class="twitter">Twitter</a> or <a href="https://dribbble.com/tristanedwards" target="_blank" class="dribbble">Dribbble</a> for updates and other cool projects!</p>
+<p>Feel free to fork sweetAlert on <a href="https://github.com/t4t5/sweetalert" class="github">GitHub</a> if you have any features that you want to add!</p>
+
+
+<footer>
+	<span class="te-logo">TE</span> • 2014
+</footer>
+
+
+<script>
+
+
+
+document.querySelector('#success').onclick = function(){
+	swal("Event submitted!", "You will receive a confirmation email once we review it.", "success");
+};
+
+document.querySelector('#terms-conditions').onclick = function(){
+	swal({
+		title: "Sweet!",
+		text: "Here's a custom image.",
+		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+
+</script>
+
+
+
+</body>
+
+</html>
