@@ -50,26 +50,23 @@
 
 <script type="text/javascript">
 var nextWord = (function() {
-  var things = ['underwater', 'butter', 'solar','greasy', 'lazer','heating','nano','popcorn','pancake','mechanical','bacon','secret','bionic','oxygen','medical','food','micro','emergency','weightless','voice activated','hydro','ballon','medical','paper','chicken','water','musical','automatic','magnetic','Channing Tatum','computer','baby','saltwater', 'watermelon', 'penguin', 'hanging', 'coffee', 'cooling', 'washing', 'rubbish', 'muffin', 'noodle', 'corn chip', 'duct tape', 'velcro', 'toilet paper', 'space'];
-  var count = -1;
-  return function() {
-    return things[Math.floor(Math.random()*things.length)];
-  }
+	var things = ['underwater', 'butter', 'solar','greasy', 'lazer','heating','nano','popcorn','pancake','mechanical','bacon','secret','bionic','oxygen','medical','food','micro','emergency','weightless','voice activated','hydro','ballon','medical','paper','chicken','water','musical','automatic','magnetic','Channing Tatum','computer','baby','saltwater', 'watermelon', 'penguin', 'hanging', 'coffee', 'cooling', 'washing', 'rubbish', 'muffin', 'noodle', 'corn chip', 'duct tape', 'velcro', 'toilet paper', 'space'];
+	var count = -1;
+	return function() {
+		return things[Math.floor(Math.random()*things.length)];
+	}
 }());
 
 var nextWord1 =  (function() {
-  var things1 = ['alarm', 'arm','ball', 'book', 'brush', 'cap','car', 'basket','bucket','cannon','cloth','field','hat','glove','fuel','light','swing','wool','wheel','sofa','phone','boat','thingamajig','cloud','biosphere','conductor','cleaner','cooler','heater','network','battery','sphere','kite','house','plane','soap', 'chair', 'chopsticks', 'cereal', 'esky', 'gym', 'cord', 'screwdriver', 'website', 'app', 'door mat'];
-  var count1 = -1;
-  return function() {
-    return things1[Math.floor(Math.random()*things1.length)];
+	var things1 = ['alarm', 'arm','ball', 'book', 'brush', 'cap','car', 'basket','bucket','cannon','cloth','field','hat','glove','fuel','light','swing','wool','wheel','sofa','phone','boat','thingamajig','cloud','biosphere','conductor','cleaner','cooler','heater','network','battery','sphere','kite','house','plane','soap', 'chair', 'chopsticks', 'cereal', 'esky', 'gym', 'cord', 'screwdriver', 'website', 'app', 'door mat'];
+	var count1 = -1;
+	return function() {
+		return things1[Math.floor(Math.random()*things1.length)];
 
-  }
+	}
 }
 
 ()); 
-
-</script>
-<script>
 // bonce in animation when click boom
 left = document.getElementById("foo");
 right = document.getElementById("foo1");
@@ -93,100 +90,7 @@ boomer.addEventListener("click", function(e) {
   left.classList.add("bounceIn");
   right.classList.add("bounceIn");
 }, false);
-
-
-/*function compare() {
-    var foo,foo1;
-    age = document.getElementById("age").value;
-    voteable = (age < 18) ? "winer":"loser";
-    document.getElementById("fooa").innerHTML = voteable + " to vote.";
-} */
-
-  
-
-
-document.querySelector('button.download').onclick = function(){
-	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
-};
-
-document.querySelector('.showcase.normal button').onclick = function(){
-	alert("Oops... Something went wrong!");
-};
-
-document.querySelector('.showcase.sweet button').onclick = function(){
-	swal("Oops...", "Something went wrong!", "error");
-};
-
-document.querySelector('ul.examples li.message button').onclick = function(){
-	swal("Here's a message!");
-};
-
-document.querySelector('ul.examples li.timer button').onclick = function(){
-	swal({
-		title: "Auto close alert!",
-		text: "I will close in 2 seconds.",
-		timer: 2000
-	});
-};
-
-document.querySelector('ul.examples li.title-text button').onclick = function(){
-	swal("Here's a message!", "It's pretty, isn't it?")
-};
-
-document.querySelector('ul.examples li.success button').onclick = function(){
-	swal("Good job!", "You clicked the button!", "success");
-};
-
-document.querySelector('foo').onclick = function(){
-	swal({
-		title: "Are you sure?",
-		text: "You will not be able to recover this imaginary file!",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!',
-		closeOnConfirm: false,
-		//closeOnCancel: false
-	},
-	function(){
-		swal("Deleted!", "Your imaginary file has been deleted!", "success");
-	});
-};
-
-document.querySelector('button').onclick = function(){
-	swal({
-		title: "Are you sure?",
-		text: "You will not be able to recover this imaginary file!",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!',
-		cancelButtonText: "No, cancel plx!",
-		closeOnConfirm: false,
-		closeOnCancel: false
-	},
-	function(isConfirm){
-    if (isConfirm){
-      swal("Deleted!", "Your imaginary file has been deleted!", "success");
-    } else {
-      swal("Cancelled", "Your imaginary file is safe :)", "error");
-    }
-	});
-};
-
-
-
-document.querySelector('ul.examples li.custom-icon button').onclick = function(){
-	swal({
-		title: "Computer chose:",
-		text: thing,
-		imageUrl: 'images/thumbs-up.jpg'
-	});
-};
-
 </script>
-
-
 
 </body>
 
