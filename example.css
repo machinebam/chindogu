@@ -3,7 +3,92 @@
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center; }
+@-webkit-keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
 
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+          animation-name: bounceIn;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+}
 h1 {
   background-image: url("images/logo_big.png");
   background-image: -webkit-image-set(url("images/logo_big.png") 1x, url("images/logo_big@2x.png") 2x);
@@ -23,9 +108,9 @@ h1 {
       width: 250px; } }
 
 h2 {
-  font-size: 20px;
-  color: #A9B2BC;
-  line-height: 25px;
+  font-size: 3rem;
+  color: #374698;
+  line-height: auto;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
@@ -36,39 +121,20 @@ h3 {
   color: #C7CCD1;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed', sans-serif;
-  margin-top: 100px;
+  margin: 2rem 0;
   text-align: center;
   position: relative; }
-  h3#download-section {
-    margin-top: 50px;
-    padding-top: 40px; }
-  h3::after {
-    content: "";
-    background-color: #e2e5e8;
-    height: 4px;
-    width: 700px;
-    left: 50%;
-    margin-left: -350px;
-    position: absolute;
-    margin-top: -50px;
-    border-radius: 2px; }
-    @media all and (max-width: 740px) {
-      h3::after {
-        width: auto;
-        left: 20px;
-        right: 20px;
-        margin-left: 0; } }
-
+ 
 a {
   text-decoration: none; }
 
 p {
   max-width: 826px;
-  margin: 30px auto;
+  margin: 15px auto;
   font-size: 17px;
   font-weight: 300;
-  color: #848D94;
-  line-height: 25px;
+  color: #333;
+  line-height: 17px;
   text-align: left; }
   p.center {
     text-align: center; }
@@ -88,7 +154,7 @@ p {
       color: #323131; }
 
 button, .button {
-  background-color: #AEDEF4;
+  background-color: #ff9900;
   color: white;
   border: none;
   box-shadow: none;
@@ -102,9 +168,9 @@ button, .button {
   button:focus, .button:focus {
     outline: none; }
   button:hover, .button:hover {
-    background-color: #a1d9f2; }
+    background-color: #cc7a00; }
   button:active, .button:active {
-    background-color: #81ccee; }
+    background-color: #cc7a00; }
   button.cancel, .button.cancel {
     background-color: #D0D0D0; }
     button.cancel:hover, .button.cancel:hover {
@@ -152,6 +218,7 @@ pre {
   background-color: #eceef0;
   padding: 20px;
   display: inline-block;
+  border-radius: 4px;
   width: 383px;
   vertical-align: top;
   position: relative; }
