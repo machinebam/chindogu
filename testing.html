@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>SweetAlert</title>
+  <link rel="stylesheet" href="./example.css">
+  <!-- This is what you need -->
+  <script src="../lib/sweet-alert.js"></script>
+  <link rel="stylesheet" href="../lib/sweet-alert.css">
+  <!--.......................-->
+</head>
+<body>
+
+<h1>珍道具</h1>
+<h2>CHINDOGU</h2>
+<h3>Scitech Chindogu generator</h3>
+
+<!-- What does it do? -->
+
+<p>Chindōgu (珍道具) is the Japanese art of inventing ingenious everyday gadgets.</p>
+<p>1. It has to be possible to make (i.e., it has to actually exist), in spite of its absurdity;</p>
+<p>2. It has to remain in the public domain (i.e., it cannot be given a patent);</p>
+<p>3. It must not be exclusively a vehicle for humor, or the warped satirical worldview of the inventor.</p>
+
+
+
+
+
+<div class="showcase normal">
+	<h2 id="foo">&nbsp;</h2>
+	
+
+	<div id="icon" class="vs-icon"></div>
+</div>
+
+<div class="showcase sweet">
+	<h2 class="bounceIn" id="foo1">&nbsp;</h2>
+	
+	
+
+</div>
+<div class="center-container">
+	<p class="center"><button id="boom" onclick="
+  document.getElementById('foo').innerHTML = nextWord(); document.getElementById('foo1').innerHTML = nextWord1();
+">Invent</button></p>
+	
+</div>
+<footer>
+	Scitech • 2014
+</footer>
+
+
+<script type="text/javascript">
+var nextWord = (function() {
+  var things = ['Rock', 'Paper', 'Scissors','Spock', 'Lizard'];
+  var count = -1;
+  return function() {
+    return things[Math.floor(Math.random()*things.length)];
+  }
+}());
+
+var nextWord1 =  (function() {
+  var things1 = ['Rock', 'Paper', 'Scissors','Spock', 'Lizard'];
+  var count1 = -1;
+  return function() {
+    return things1[Math.floor(Math.random()*things1.length)];
+
+  }
+}
+
+()); 
+
+</script>
+<script>
+// bonce in animation when click boom
+left = document.getElementById("foo");
+right = document.getElementById("foo1");
+boomer = document.getElementById("boom");
+
+// reset the transition by...
+boomer.addEventListener("click", function(e) {
+  e.preventDefault;
+
+  
+  // -> removing the class
+  left.classList.remove("bounceIn");
+  right.classList.remove("bounceIn");
+  
+  // -> triggering reflow /* The actual magic */
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+  left.offsetWidth = left.offsetWidth;
+  right.offsetWidth = right.offsetWidth;
+  
+  // -> and re-adding the class
+  left.classList.add("bounceIn");
+  right.classList.add("bounceIn");
+}, false);
+
+
+/*function compare() {
+    var foo,foo1;
+    age = document.getElementById("age").value;
+    voteable = (age < 18) ? "winer":"loser";
+    document.getElementById("fooa").innerHTML = voteable + " to vote.";
+} */
+
+  
+
+
+document.querySelector('button.download').onclick = function(){
+	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
+};
+
+document.querySelector('.showcase.normal button').onclick = function(){
+	alert("Oops... Something went wrong!");
+};
+
+document.querySelector('.showcase.sweet button').onclick = function(){
+	swal("Oops...", "Something went wrong!", "error");
+};
+
+document.querySelector('ul.examples li.message button').onclick = function(){
+	swal("Here's a message!");
+};
+
+document.querySelector('ul.examples li.timer button').onclick = function(){
+	swal({
+		title: "Auto close alert!",
+		text: "I will close in 2 seconds.",
+		timer: 2000
+	});
+};
+
+document.querySelector('ul.examples li.title-text button').onclick = function(){
+	swal("Here's a message!", "It's pretty, isn't it?")
+};
+
+document.querySelector('ul.examples li.success button').onclick = function(){
+	swal("Good job!", "You clicked the button!", "success");
+};
+
+document.querySelector('foo').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!',
+		closeOnConfirm: false,
+		//closeOnCancel: false
+	},
+	function(){
+		swal("Deleted!", "Your imaginary file has been deleted!", "success");
+	});
+};
+
+document.querySelector('button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!',
+		cancelButtonText: "No, cancel plx!",
+		closeOnConfirm: false,
+		closeOnCancel: false
+	},
+	function(isConfirm){
+    if (isConfirm){
+      swal("Deleted!", "Your imaginary file has been deleted!", "success");
+    } else {
+      swal("Cancelled", "Your imaginary file is safe :)", "error");
+    }
+	});
+};
+
+
+
+document.querySelector('ul.examples li.custom-icon button').onclick = function(){
+	swal({
+		title: "Computer chose:",
+		text: thing,
+		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+</script>
+
+
+
+</body>
+
+</html>
